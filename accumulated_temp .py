@@ -59,12 +59,12 @@ def main():
     tempsum = sum_temp(data)
 
     print("[1] 연도별 최대 일교차 발생 일자와 일교차")
-    for y in diurnal:
-        print(diurnal[y][0], diurnal[y][1])
+    for y in sorted(diurnal.keys()):
+        print(f"{diurnal[y][0]} {diurnal[y][1]:.1f}")  # f-string으로 출력
 
     print("\n[2] 연도별 5~9월 적산온도")
-    for y in tempsum:
-        print(y, tempsum[y])
+    for y in sorted(tempsum.keys()):
+        print(f"{y} {tempsum[y]:.1f}")  # f-string으로 출력
 
 if __name__ == "__main__":
     main()
